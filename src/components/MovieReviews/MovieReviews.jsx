@@ -1,11 +1,11 @@
 import css from "./MovieReviews.module.css";
 import {useParams} from "react-router-dom";
-import {fetchMovieReviews} from "../services/api";
+import {fetchMovieReviews} from "../../components/services/api";
 import { useEffect,useState } from "react";
 
 const MovieReviews = () => {
     const { movieId } = useParams();
-    const { movieReviews, setMovieReviews } = useState([]);
+    const [movieReviews, setMovieReviews ] = useState([]);
     useEffect(() => {
         const fetchMovieDetails = async () => {
             try {

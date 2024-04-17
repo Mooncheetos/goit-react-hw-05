@@ -1,12 +1,12 @@
 import css from "./MoviesPage.module.css";
 import { useSearchParams } from "react-router-dom";
-import {fetchMovies} from "../services/api";
-import { useEffect, useState } from "react";
+import {fetchMovies} from "../../components/services/api";
+import { useState, useEffect } from "react";
 import MovieList from "../../components/MovieList/MovieList";
 
 const MoviesPage = () => {
-    const { searchParams,setSearchParams } = useSearchParams();
-    const { searchResults, setSearchResults } = useState([]);
+    const [searchParams,setSearchParams ] = useSearchParams();
+    const [searchResults, setSearchResults ] = useState([]);
     const query = searchParams.get("query");
 
     useEffect(() => {
@@ -17,7 +17,7 @@ const MoviesPage = () => {
         async function fetchMovieByQuery() {
             try {
                 const data = await fetchMovies(query);
-                searchResults(data);
+                setSearchResults(data);
             }
             catch (error) {
                 console.log(error);

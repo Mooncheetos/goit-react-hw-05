@@ -1,11 +1,11 @@
 import css from "./MovieCast.module.css";
 import {useParams} from "react-router-dom";
-import {fetchMovieCast} from "../services/api";
+import {fetchMovieCast} from "../../components/services/api";
 import { useEffect,useState } from "react";
 
 const MovieCast = () => {
     const { movieId } = useParams();
-    const { movieCast, setMovieCast } = useState([]);
+    const [movieCast, setMovieCast ] = useState([]);
     useEffect(() => {
         const fetchMovieDetails = async () => {
             try {

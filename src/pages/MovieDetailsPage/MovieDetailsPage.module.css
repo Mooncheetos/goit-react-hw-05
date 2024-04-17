@@ -1,3 +1,12 @@
+.movieContainer {
+    display: flex;
+    align-items: flex-start;
+}
+
+.movieInfo {
+    margin-left: 20px;
+}
+
 .movieTitle {
     margin-bottom: 16px;
 }

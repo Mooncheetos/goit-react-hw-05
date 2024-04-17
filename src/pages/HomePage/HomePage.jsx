@@ -1,11 +1,11 @@
 import css from "./HomePage.module.css";
-import {fetchPopularMovies} from "../services/api";
-import { useEffect,useState } from "react";
+import {fetchPopularMovies} from "../../components/services/api";
+import { useState, useEffect } from "react";
 import MovieList from "../../components/MovieList/MovieList";
 
 
 const HomePage = () => {
-    const { trendingMovies, setTrendingMovies } = useState([]);
+    const [trendingMovies, setTrendingMovies] = useState([]);
     useEffect(() => {
         const fetchTrendingMovies = async () => {
             try {
