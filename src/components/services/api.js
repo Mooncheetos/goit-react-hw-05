@@ -17,7 +17,7 @@ export const fetchMovies = async (query) => {
     });
     return response.data.results;
 };
-export const fetchMovieCast = async () => {
+export const fetchMovieCast = async (movieId) => {
     const response = await api.get(`/movie/${movieId}/credits`, {
         params: {
             api_key: accessKey,
@@ -31,6 +31,7 @@ export const fetchMovieReviews = async (movieId) => {
             api_key: accessKey,            
         },
     });
+    console.log(response.data.results)
     return response.data.results;
 };
 export const getMovieById = async (movieId) => {

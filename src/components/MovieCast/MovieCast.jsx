@@ -22,7 +22,7 @@ const MovieCast = () => {
         <div>
             <h2 className={css.castTitle}>Film cast</h2>
             <ul className={css.castList}>{movieCast.map((actor) => (
-                <li>
+                <li key={actor.id}>
                     <img className={css.castImg}
               src={
                 actor.profile_path
